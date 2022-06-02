@@ -12,16 +12,10 @@ export const write = async () => {
     var fileStream = fs.createWriteStream(sourceFile)
 
     process.stdin.on('data', data => {
-        // let chunk;
-    //   while ((chunk = process.stdin.read()) !== null) {
-    //    process.stdout.write(`data: ${chunk}`);
-    //   }
-
         fileStream.write(data)
         fileStream.end()
         process.exit()
     })
-    // process.stdout.write(file);
 }
 
 write()

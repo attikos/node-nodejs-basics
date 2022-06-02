@@ -1,3 +1,9 @@
 export const transform = async () => {
-    // Write your code here 
-};
+    process.stdin.on('data', data => {
+        const res = data.toString().split('').reverse().join('') + '\n';
+
+        process.stdout.write(res);
+    })
+}
+
+transform()
