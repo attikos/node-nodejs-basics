@@ -1,3 +1,16 @@
+import fs, { promises as fsAsync } from 'fs'
+
 export const read = async () => {
-    // Write your code here 
+    const currentDir = './src/fs/files/'
+    const sourceFile = currentDir + 'fileToRead.txt'
+
+    if (!fs.existsSync(currentDir)) {
+        throw Error('FS operation failed')
+    }
+
+    const file = await fsAsync.readFile(sourceFile, 'utf8');
+
+    console.log('file', file);
 };
+
+// read()
