@@ -8,7 +8,7 @@ export const parseArgs = () => {
         }
     })
 
-    console.log(res.join(', '));
+    console.log(res.join(', '))
 };
 
 parseArgs()
