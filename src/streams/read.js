@@ -1,8 +1,21 @@
-export const read = async () => {
-    // Write your code here
-};
+import fs from 'fs'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url';
 
-// export const create = async () => {
-//     var fileStream = fs.createWriteStream('files/fresh.txt')
-//     fileStream.write('I am fresh and young')
-//     fileStream.end()
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export const read = async () => {
+    const currentDir = __dirname;
+    const sourceFile = currentDir + '/files/fileToRead.txt'
+
+    var fileStream = fs.createReadStream(sourceFile)
+
+    fileStream.on('data', (chunk) => {
+        process.stdout.write(chunk.toString());
+
+        process.exit()
+    })
+}
+
+read()
