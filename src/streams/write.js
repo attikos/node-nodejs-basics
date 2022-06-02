@@ -6,8 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const write = async () => {
-    const currentDir = __dirname;
-    const sourceFile = currentDir + '/files/fileToWrite.txt'
+    const sourceFile = __dirname + '/files/fileToWrite.txt'
 
     var fileStream = fs.createWriteStream(sourceFile)
 

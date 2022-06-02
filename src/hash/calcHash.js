@@ -7,8 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const calculateHash = async () => {
-    const currentDir = __dirname;
-    const sourceFile = currentDir + '/files/fileToCalculateHashFor.txt'
+    const sourceFile = __dirname + '/files/fileToCalculateHashFor.txt'
 
     if (!fs.existsSync(sourceFile)) {
         throw Error('FS operation failed')

@@ -6,8 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const read = async () => {
-    const currentDir = __dirname;
-    const sourceFile = currentDir + '/files/fileToRead.txt'
+    const sourceFile = __dirname + '/files/fileToRead.txt'
 
     var fileStream = fs.createReadStream(sourceFile)
 
