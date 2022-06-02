@@ -31,4 +31,4 @@ export const copy = async () => {
     }
 };
 
-// copy()
+copy()

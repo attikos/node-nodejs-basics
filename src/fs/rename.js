@@ -18,4 +18,4 @@ export const rename = async () => {
     console.log('Rename done!')
 };
 
-// rename()
+rename()

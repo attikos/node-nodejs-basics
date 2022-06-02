@@ -13,4 +13,4 @@ export const read = async () => {
     console.log('file', file);
 };
 
-// read()
+read()

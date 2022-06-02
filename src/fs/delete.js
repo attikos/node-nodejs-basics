@@ -13,4 +13,4 @@ export const remove = async () => {
     console.log('Remove done!');
 }
 
-// remove()
+remove()

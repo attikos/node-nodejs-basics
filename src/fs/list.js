@@ -12,4 +12,4 @@ export const list = async () => {
     files.forEach(x => console.log(x));
 };
 
-// list()
+list()
