@@ -1,7 +1,13 @@
-const path = require('path');
-const { release, version } = require('os');
-const { createServer: createServerHttp } = require('http');
-require('./files/c');
+import path, { dirname } from 'path'
+import { release, version } from 'os'
+import { createServer as createServerHttp } from 'http'
+import('./files/c.js');
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const random = Math.random();
 
@@ -24,8 +30,7 @@ const createMyServer = createServerHttp((_, res) => {
     res.end('Request accepted');
 });
 
-module.exports = {
+export {
     unknownObject,
     createMyServer,
 };
-

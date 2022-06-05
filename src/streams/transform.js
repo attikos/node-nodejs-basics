@@ -1,3 +1,24 @@
+import { Transform } from 'stream'
+
 export const transform = async () => {
-    // Write your code here 
-};
+    // ver. 1
+    // process.stdin.on('data', data => {
+    //     const res = data.toString().split('').reverse().join('') + '\n';
+
+    //     process.stdout.write(res);
+    // })
+
+    // ver. 2
+    const revert = new Transform({
+      transform(chunk, encoding, callback) {
+        callback(null, chunk.toString().split('').reverse().join('') + '\n');
+      },
+    });
+
+    process.stdin.pipe(revert).pipe(process.stdout)
+}
+
+// transform()
+
+// Uncomment transform() + run in console:
+// node ./src/streams/transform.js
