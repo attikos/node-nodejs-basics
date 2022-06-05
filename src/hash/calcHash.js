@@ -20,4 +20,4 @@ export const calculateHash = async () => {
     console.log(res)
 }
 
-calculateHash()
+// calculateHash()

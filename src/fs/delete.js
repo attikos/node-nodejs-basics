@@ -1,8 +1,12 @@
 import fs, { promises as fsAsync } from 'fs'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const remove = async () => {
-    const currentDir = './src/fs/files/'
-    const sourceFile = currentDir + 'fileToRemove.txt'
+    const sourceFile = __dirname + '/files/fileToRemove.txt'
 
     if (!fs.existsSync(sourceFile)) {
         throw Error('FS operation failed')
@@ -13,4 +17,4 @@ export const remove = async () => {
     console.log('Remove done!');
 }
 
-remove()
+// remove()

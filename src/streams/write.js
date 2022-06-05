@@ -17,4 +17,7 @@ export const write = async () => {
     })
 }
 
-write()
+// write()
+
+// Uncomment write() + run in console:
+// node ./src/streams/write.js

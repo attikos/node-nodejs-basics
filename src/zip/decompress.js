@@ -21,4 +21,4 @@ export const decompress = async () => {
     console.log('File unzipped successfully!')
 };
 
-decompress()
+// decompress()

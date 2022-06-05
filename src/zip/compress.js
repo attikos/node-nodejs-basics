@@ -20,4 +20,4 @@ export const compress = async () => {
     console.log('File zipped successfully!')
 };
 
-compress()
+// compress()

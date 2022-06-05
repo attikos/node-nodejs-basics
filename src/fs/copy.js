@@ -1,10 +1,13 @@
 import fs, { promises as fsAsync } from 'fs'
-import path from 'path'
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const copy = async () => {
-    const currentDir = './src/fs/'
-    const sourceDir = currentDir + 'files/'
-    const targetDir = currentDir + 'files_copy/'
+    const sourceDir = __dirname + '/files/'
+    const targetDir = __dirname + '/files_copy/'
 
     if (!fs.existsSync(sourceDir)) {
         throw Error('FS operation failed')
@@ -31,4 +34,4 @@ export const copy = async () => {
     }
 };
 
-copy()
+// copy()

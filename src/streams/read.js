@@ -17,4 +17,7 @@ export const read = async () => {
     })
 }
 
-read()
+// read()
+
+// Uncomment read() + run in console:
+// node ./src/streams/read.js

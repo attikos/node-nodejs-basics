@@ -18,4 +18,7 @@ export const transform = async () => {
     process.stdin.pipe(revert).pipe(process.stdout)
 }
 
-transform()
+// transform()
+
+// Uncomment transform() + run in console:
+// node ./src/streams/transform.js

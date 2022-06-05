@@ -1,9 +1,14 @@
 import fs, { promises as fsAsync } from 'fs'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 export const rename = async () => {
-    const currentDir = './src/fs/files/'
-    const sourceFile = currentDir + 'wrongFilename.txt'
-    const targetFile = currentDir + 'properFilename.md'
+    const sourceFile = __dirname + '/files/wrongFilename.txt'
+    const targetFile = __dirname + '/files/properFilename.md'
 
     if (!fs.existsSync(sourceFile)) {
         throw Error('FS operation failed')
@@ -18,4 +23,4 @@ export const rename = async () => {
     console.log('Rename done!')
 };
 
-rename()
+// rename()
