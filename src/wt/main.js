@@ -42,4 +42,4 @@ export const performCalculations = async () => {
 
 };
 
-performCalculations().then(res => console.log(JSON.stringify(res)));
+// performCalculations().then(res => console.log(JSON.stringify(res)));
